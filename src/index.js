@@ -9,7 +9,7 @@ const userRouter = require("./routers/user");
 const taskRouter = require("./routers/task");
 
 const app = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 
 //define path for express config
 const publicDirectoryPath = path.join(__dirname, "../public");
