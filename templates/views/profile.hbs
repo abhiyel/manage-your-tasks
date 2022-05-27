@@ -1,0 +1,97 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <style>
+      .navbar {
+        display: inline;
+      }
+
+      .navbar a:link {
+        text-decoration: none;
+      }
+
+      .navbar a:visited {
+        text-decoration: none;
+      }
+
+      .navbar a:active {
+        text-decoration: underline;
+      }
+
+      .navbar a {
+        font-size: 30px;
+        padding: 5px;
+        display: flexbox;
+        border: 2px solid black;
+      }
+      .navbar a:hover {
+        background-color: antiquewhite;
+      }
+
+      button {
+        background-color: #4c59af;
+        color: white;
+        padding: 9px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 15px;
+        margin-left: 10px;
+        cursor: pointer;
+      }
+      input[type="text"] {
+        width: 15%;
+        padding: 5px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="font-family: Arial, Helvetica, sans-serif">Welcome, {{name}}</h1>
+    <center>
+      <div class="navbar">
+        <a href="/users/me">Profile</a>
+        <a href="/users/tasks">Your Tasks</a>
+        <a href="/users/accountsettings">Account Settings</a>
+        <a href="/about">About</a>
+      </div>
+    </center>
+    <br />
+    <table>
+          <tr>
+            <td style="font-family: Arial, Helvetica, sans-serif">Name:</td>
+            <td><b style="font-family: Arial, Helvetica, sans-serif">{{name}}</b></td>
+          </tr>
+          <tr>
+            <td style="font-family: Arial, Helvetica, sans-serif">Email:</td>
+            <td><b style="font-family: Arial, Helvetica, sans-serif">{{email}}</b></td>
+
+          </tr>
+        </table>
+    <br />
+    <h3 style="font-family: Arial, Helvetica, sans-serif">
+      <u>To create a task, type the task description below and submit</u>
+    </h3>
+    <form action="task" method="POST">
+      <label style="font-family: Arial, Helvetica, sans-serif"
+        ><b>Task Description:</b></label
+      >
+      <input type="text" name="description" value="" />
+      <button>Create Task</button>
+    </form>
+    <br />
+    <h2 style="font-family: Arial, Helvetica, sans-serif">
+      View your incomplete tasks <a href="/users/tasks">here</a>
+    </h2>
+    <center>
+      <form action="logout" method="POST">
+        <button type="submit">logout</button>
+      </form>
+    </center>
+    {{>footer}}
+  </body>
+</html>

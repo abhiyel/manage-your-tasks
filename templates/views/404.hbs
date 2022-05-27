@@ -1,0 +1,72 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pag not found</title>
+    <style>
+      .navbar {
+        display: inline;
+      }
+
+      .navbar a:link {
+        text-decoration: none;
+      }
+
+      .navbar a:visited {
+        text-decoration: none;
+      }
+
+      .navbar a:active {
+        text-decoration: underline;
+      }
+
+      .navbar a {
+        font-size: 30px;
+        padding: 5px;
+        display: flexbox;
+        border: 2px solid black;
+      }
+      .navbar a:hover {
+        background-color: antiquewhite;
+      }
+
+      button {
+        background-color: #4c59af;
+        color: white;
+        padding: 9px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 15px;
+        margin-left: 10px;
+        cursor: pointer;
+      }
+      input[type="text"] {
+        width: 15%;
+        padding: 5px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+      <h1>ERROR 404</h1>
+      <center>
+      <div class="navbar">
+        <a href="/users/me">Profile</a>
+        <a href="/users/tasks">Your Tasks</a>
+        <a href="/users/accountsettings">Account Settings</a>
+        <a href="/about">About</a>
+      </div>
+    </center>
+    <br />
+    <h2 style="font-family: Arial, Helvetica, sans-serif">{{errorMessage}}</h2>
+    <p>Redirecting you to the home page in a moment...</p>
+    {{>footer}}
+  </body>
+  
+  <script>
+    setTimeout(function(){ window.location.href = '/'; }, 3000);
+  </script>
+</html>

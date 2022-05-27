@@ -1,0 +1,121 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Account Settings</title>
+    <style>
+      .navbar {
+        display: inline;
+      }
+
+      .navbar a:link {
+        text-decoration: none;
+      }
+
+      .navbar a:visited {
+        text-decoration: none;
+      }
+
+      .navbar a:active {
+        text-decoration: underline;
+      }
+
+      .navbar a {
+        font-size: 30px;
+        padding: 5px;
+        display: flexbox;
+        border: 2px solid black;
+      }
+      .navbar a:hover {
+        background-color: antiquewhite;
+      }
+
+      .button {
+        background-color: #4c59af;
+        color: white;
+        padding: 9px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 15px;
+        margin-left: 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="font-family: Arial, Helvetica, sans-serif">Welcome, {{name}}</h1>
+    <center>
+      <div class="navbar">
+        <a href="/users/me">Home</a>
+        <a href="/users/tasks">Your Tasks</a>
+        <a href="/accountsettings">Account Settings</a>
+        <a href="/about">About</a>
+      </div>
+    </center>
+    <br />
+    <br />
+    <center>
+      <form action="/users/logoutAll" method="POST">
+        <button class="button" type="submit">logout from all devices</button>
+      </form>
+    </center>
+
+    <hr />
+    <hr />
+    <h2>Update profile</h2>
+
+    <form action="me" method="POST">
+      <table>
+        <tr>
+          <td>Name:</td>
+          <td>
+            <input type="text" name="uname" placeholder="Enter name Here" />
+          </td>
+        </tr>
+        <tr>
+          <td>Password:</td>
+          <td>
+            <input
+              type="password"
+              name="upassword"
+              placeholder="Enter Password Here"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>Email:</td>
+          <td>
+            <input type="email" name="uemail" placeholder="Enter Email Here" />
+          </td>
+        </tr>
+        <tr>
+          <td>Age:</td>
+          <td>
+            <input type="text" name="uage" placeholder="Enter Email Here" />
+          </td>
+        </tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr>
+          <td>
+            <input class="button" type="submit" name="submit" value="Save" />
+          </td>
+        </tr>
+      </table>
+    </form>
+
+    <hr />
+    <hr />
+    <br />
+    <form action="deleteAccount" method="POST">
+      <button class="button" type="submit">delete account</button>
+    </form>
+    {{>footer}}
+  </body>
+</html>
